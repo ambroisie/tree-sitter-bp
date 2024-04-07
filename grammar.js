@@ -36,7 +36,7 @@ module.exports = grammar({
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
     identifier: (_) => /[_\p{XID_Start}][_\p{XID_Continue}]*/,
 
-    integer_literal: (_) => /[0-9]+/,
+    integer_literal: (_) => seq(optional("-"), /[0-9]+/),
 
     // }}}
   }

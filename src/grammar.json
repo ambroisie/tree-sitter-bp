@@ -86,8 +86,25 @@
       "value": "[_\\p{XID_Start}][_\\p{XID_Continue}]*"
     },
     "integer_literal": {
-      "type": "PATTERN",
-      "value": "[0-9]+"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "-"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "[0-9]+"
+        }
+      ]
     }
   },
   "extras": [
