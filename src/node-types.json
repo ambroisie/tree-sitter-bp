@@ -32,6 +32,10 @@
         "required": true,
         "types": [
           {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
             "type": "identifier",
             "named": true
           },
@@ -58,6 +62,11 @@
         ]
       }
     }
+  },
+  {
+    "type": "boolean_literal",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "comment",
@@ -92,6 +101,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "boolean_literal",
+          "named": true
+        },
         {
           "type": "identifier",
           "named": true
@@ -137,6 +150,10 @@
         "multiple": true,
         "required": false,
         "types": [
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
           {
             "type": "identifier",
             "named": true
@@ -221,12 +238,20 @@
     "named": true
   },
   {
+    "type": "false",
+    "named": false
+  },
+  {
     "type": "identifier",
     "named": true
   },
   {
     "type": "raw_string_literal",
     "named": true
+  },
+  {
+    "type": "true",
+    "named": false
   },
   {
     "type": "{",

@@ -34,6 +34,7 @@ module.exports = grammar({
     _expr: ($) => choice(
       // Literals
       $.identifier,
+      $.boolean_literal,
       $.integer_literal,
       $._string_literal,
       // Composites
@@ -43,6 +44,8 @@ module.exports = grammar({
 
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
     identifier: (_) => /[_\p{XID_Start}][_\p{XID_Continue}]*/,
+
+    boolean_literal: (_) => choice("true", "false"),
 
     integer_literal: (_) => seq(optional("-"), /[0-9]+/),
 
