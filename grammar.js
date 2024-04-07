@@ -3,6 +3,7 @@ module.exports = grammar({
 
   extras: ($) => [
     /\s+/,
+    $.comment,
   ],
 
   rules: {
@@ -11,6 +12,8 @@ module.exports = grammar({
     _definition: ($) => choice(
       $.assignment,
     ),
+
+    comment: (_) => seq("#", /.*/),
 
     // Definitions {{{
 
