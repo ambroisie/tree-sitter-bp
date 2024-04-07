@@ -38,6 +38,7 @@ module.exports = grammar({
       $._string_literal,
       // Composites
       $.list_expression,
+      $.map_expression,
     ),
 
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
@@ -82,6 +83,22 @@ module.exports = grammar({
       "[",
       optional(commaSeparated($._expr)),
       "]",
+    ),
+
+    map_expression: ($) => seq(
+      "{",
+      optional(commaSeparated($._colon_property)),
+      "}",
+    ),
+
+    // }}}
+
+    // Properties {{{
+
+    _colon_property: ($) => seq(
+      field("field", $.identifier),
+      ":",
+      field("value", $._expr),
     ),
 
     // }}}
