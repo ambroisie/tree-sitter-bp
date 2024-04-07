@@ -1,0 +1,36 @@
+labels:
+  backend: local
+
+steps:
+- name: pre-commit check
+  image: bash
+  commands:
+  - nix develop --command pre-commit run --all
+
+- name: flake check
+  image: bash
+  commands:
+  - nix flake check
+
+- name: package check
+  image: bash
+  commands:
+  - nix build
+
+- name: notify
+  image: bash
+  environment:
+    ADDRESS:
+      from_secret: matrix_homeserver
+    ROOM:
+      from_secret: matrix_roomid
+    USER:
+      from_secret: matrix_username
+    PASS:
+      from_secret: matrix_password
+  commands:
+  - nix run github:ambroisie/matrix-notifier
+  when:
+    status:
+    - failure
+    - success

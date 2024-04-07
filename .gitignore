@@ -1,0 +1,8 @@
+# Nix files
+/result
+/.pre-commit-config.yaml
+
+# Tree-sitter artifact
+/tree-sitter-blueprint.wasm
+# Rust bindings
+/target
