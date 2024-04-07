@@ -33,6 +33,19 @@ foo = bar
     (identifier)))
 
 ================================================================================
+Addition assignement
+================================================================================
+
+foo += 12
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (integer_literal)))
+
+================================================================================
 Multiple assignments
 ================================================================================
 
@@ -42,6 +55,39 @@ bar = 27
 --------------------------------------------------------------------------------
 
 (source_file
+  (assignment
+    (identifier)
+    (integer_literal))
+  (assignment
+    (identifier)
+    (integer_literal)))
+
+================================================================================
+Various assignements
+================================================================================
+
+foo = 0
+foo += 12
+bar = 27
+baz = 42
+qux = 1
+qux += 1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (integer_literal))
+  (assignment
+    (identifier)
+    (integer_literal))
+  (assignment
+    (identifier)
+    (integer_literal))
+  (assignment
+    (identifier)
+    (integer_literal))
   (assignment
     (identifier)
     (integer_literal))
