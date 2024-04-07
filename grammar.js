@@ -1,3 +1,7 @@
+function commaSeparated(elem) {
+  return seq(elem, repeat(seq(",", elem)), optional(","))
+}
+
 module.exports = grammar({
   name: "blueprint",
 
@@ -32,6 +36,8 @@ module.exports = grammar({
       $.identifier,
       $.integer_literal,
       $._string_literal,
+      // Composites
+      $.list_expression,
     ),
 
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
@@ -71,6 +77,12 @@ module.exports = grammar({
         /U[0-9a-fA-F]{8}/,
       ),
     )),
+
+    list_expression: ($) => seq(
+      "[",
+      optional(commaSeparated($._expr)),
+      "]",
+    ),
 
     // }}}
   }
