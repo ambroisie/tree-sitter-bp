@@ -31,12 +31,46 @@ module.exports = grammar({
       // Literals
       $.identifier,
       $.integer_literal,
+      $._string_literal,
     ),
 
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
     identifier: (_) => /[_\p{XID_Start}][_\p{XID_Continue}]*/,
 
     integer_literal: (_) => seq(optional("-"), /[0-9]+/),
+
+    // The Blueprint scanner makes use of Go's lexer, so copy their rule
+    _string_literal: ($) => choice(
+      $.raw_string_literal,
+      $.interpreted_string_literal,
+    ),
+
+    raw_string_literal: (_) => token(seq(
+      "`",
+      /[^`]+/,
+      "`",
+    )),
+
+    interpreted_string_literal: $ => seq(
+      '"',
+      repeat(choice(
+        // Allow all characters without special meaning, disallow newlines
+        /[^"\n\\]+/,
+        $.escape_sequence,
+      )),
+      token.immediate('"'),
+    ),
+
+    escape_sequence: (_) => token.immediate(seq(
+      '\\',
+      choice(
+        /[^xuU]/,
+        /\d{2,3}/,
+        /x[0-9a-fA-F]{2,}/,
+        /u[0-9a-fA-F]{4}/,
+        /U[0-9a-fA-F]{8}/,
+      ),
+    )),
 
     // }}}
   }
