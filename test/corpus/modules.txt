@@ -108,6 +108,40 @@ foo {
             (interpreted_string_literal)))))))
 
 ================================================================================
+Multiple modules
+================================================================================
+
+foo {
+    answer: 42,
+    value: "test",
+}
+
+bar {
+    baz: "qux",
+    done: true,
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (module
+    (identifier)
+    (property
+      (identifier)
+      (integer_literal))
+    (property
+      (identifier)
+      (interpreted_string_literal)))
+  (module
+    (identifier)
+    (property
+      (identifier)
+      (interpreted_string_literal))
+    (property
+      (identifier)
+      (boolean_literal))))
+
+================================================================================
 Rogue comma
 ================================================================================
 
