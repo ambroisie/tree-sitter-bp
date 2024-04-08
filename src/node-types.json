@@ -168,6 +168,11 @@
     }
   },
   {
+    "type": "block_comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "boolean_literal",
     "named": true,
     "fields": {}
@@ -646,6 +651,14 @@
   },
   {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "/",
+    "named": false
+  },
+  {
+    "type": "/*",
     "named": false
   },
   {
