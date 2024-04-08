@@ -1,0 +1,21 @@
+foo {}
+// <- module
+
+foo ()
+// <- module
+
+foo {
+// <- module
+    field: 12,
+    // <- variable.member
+    another_field: 27,
+    // <- variable.member
+}
+
+foo (
+// <- module
+    field = 42,
+    // <- variable.member
+    done = false,
+    // <- variable.member
+)

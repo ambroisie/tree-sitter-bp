@@ -24,6 +24,13 @@
 
 ; Declarations {{{
 (identifier) @variable
+
+(module
+  type: (identifier) @module)
+
+(module
+  (property
+    field: (identifier) @variable.member))
 ; }}}
 
 ; vim: sw=2 foldmethod=marker
