@@ -19,6 +19,7 @@ module.exports = grammar({
 
     _definition: ($) => choice(
       $.assignment,
+      $.module,
     ),
 
     comment: (_) => seq("#", /.*/),
@@ -29,6 +30,26 @@ module.exports = grammar({
       field("left", $.identifier),
       field("operator", choice("=", "+=")),
       field("right", $._expr),
+    ),
+
+    module: ($) => choice(
+      $._old_module,
+      $._new_module,
+    ),
+
+    // This syntax is deprecated, but still accepted
+    _old_module: ($) => seq(
+      field("type", $.identifier),
+      "{",
+      optional(commaSeparated($._colon_property)),
+      "}",
+    ),
+
+    _new_module: ($) => seq(
+      $.identifier,
+      "(",
+      optional(commaSeparated($._equal_property)),
+      ")",
     ),
 
     // }}}
@@ -165,6 +186,12 @@ module.exports = grammar({
     _colon_property: ($) => seq(
       field("field", $.identifier),
       ":",
+      field("value", $._expr),
+    ),
+
+    _equal_property: ($) => seq(
+      field("field", $.identifier),
+      "=",
       field("value", $._expr),
     ),
 
