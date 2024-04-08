@@ -53,6 +53,9 @@
 (map_expression
   (property
     field: (identifier) @property))
+
+(select_expression
+  "select" @keyword.conditional)
 ; }}}
 
 ; vim: sw=2 foldmethod=marker
