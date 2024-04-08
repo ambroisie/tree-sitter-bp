@@ -2,6 +2,10 @@ function commaSeparated(elem) {
   return seq(elem, repeat(seq(",", elem)), optional(","))
 }
 
+function trailingCommaSeparated(elem) {
+  return repeat(seq(elem, ","))
+}
+
 module.exports = grammar({
   name: "blueprint",
 
@@ -37,6 +41,8 @@ module.exports = grammar({
       $.boolean_literal,
       $.integer_literal,
       $._string_literal,
+      // Conditionals
+      $.select_expression,
       // Composites
       $.list_expression,
       $.map_expression,
@@ -81,6 +87,50 @@ module.exports = grammar({
         /U[0-9a-fA-F]{8}/,
       ),
     )),
+
+    select_expression: ($) => seq(
+      "select",
+      "(",
+      $.select_value,
+      ",",
+      $.select_cases,
+      ")",
+    ),
+
+    select_value: ($) => seq(
+      field("type", alias(
+        choice("product_variable", "release_variable", "variant"),
+        $.selection_type,
+      )),
+      "(",
+      field("condition", $._string_literal),
+      ")",
+    ),
+
+    select_cases: ($) => seq(
+      "{",
+      optional(trailingCommaSeparated($.select_case)),
+      // default *must* be the last one, enforced at parse-time...
+      optional(seq($.default_case, ",")),
+      "}",
+    ),
+
+    select_case: ($) => seq(
+      field("pattern", $._string_literal),
+      ":",
+      field("value", $._case_value)
+    ),
+
+    default_case: ($) => seq(
+      field("pattern", "default"),
+      ":",
+      field("value", $._case_value),
+    ),
+
+    _case_value: ($) => choice(
+      alias("unset", $.unset),
+      $._expr,
+    ),
 
     list_expression: ($) => seq(
       "[",

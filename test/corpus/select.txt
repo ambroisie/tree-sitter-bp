@@ -1,0 +1,160 @@
+================================================================================
+Select
+================================================================================
+
+foo = select(release_variable("RELEASE_TEST"), {
+    "d": "d2",
+    default: unset,
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (select_value
+        (selection_type)
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (default_case
+          (unset))))))
+
+================================================================================
+Select (no default)
+================================================================================
+
+foo = select(variant("arch"), {
+    "x86": "my_x86",
+    "x86_64": "my_x86_64",
+    "arm": "my_arm",
+    "arm64": "my_arm64",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (select_value
+        (selection_type)
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))))))
+
+================================================================================
+Select (no values)
+================================================================================
+
+foo = select(variant("VARIANT"), {})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (select_value
+        (selection_type)
+        (interpreted_string_literal))
+      (select_cases))))
+
+================================================================================
+Select (default in wrong order)
+================================================================================
+
+foo = select(variant("VARIANT"), {
+    "x86": "my_x86",
+    "x86_64": "my_x86_64",
+    default: unset,
+    "arm": "my_arm",
+    "arm64": "my_arm64",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (select_value
+        (selection_type)
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (ERROR
+          (default_case
+            (unset)))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))))))
+
+================================================================================
+Select (no condition)
+================================================================================
+
+foo = select(variant(), {
+    "d": unset,
+    default: "f2",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (select_value
+        (selection_type)
+        (MISSING raw_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (unset))
+        (default_case
+          (interpreted_string_literal))))))
+
+================================================================================
+Select (invalid type)
+================================================================================
+
+foo = select(some_unknown_type("CONDITION"), {
+    "d": "d2",
+    default: "f2",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (ERROR
+      (identifier)
+      (identifier)
+      (interpreted_string_literal)
+      (interpreted_string_literal))
+    (interpreted_string_literal))
+  (ERROR))

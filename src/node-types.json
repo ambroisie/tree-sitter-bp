@@ -58,6 +58,10 @@
           {
             "type": "raw_string_literal",
             "named": true
+          },
+          {
+            "type": "select_expression",
+            "named": true
           }
         ]
       }
@@ -72,6 +76,64 @@
     "type": "comment",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "default_case",
+    "named": true,
+    "fields": {
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "default",
+            "named": false
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "list_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
+            "named": true
+          },
+          {
+            "type": "select_expression",
+            "named": true
+          },
+          {
+            "type": "unset",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "integer_literal",
@@ -128,6 +190,10 @@
         {
           "type": "raw_string_literal",
           "named": true
+        },
+        {
+          "type": "select_expression",
+          "named": true
         }
       ]
     }
@@ -177,6 +243,140 @@
           {
             "type": "raw_string_literal",
             "named": true
+          },
+          {
+            "type": "select_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "select_case",
+    "named": true,
+    "fields": {
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "boolean_literal",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "integer_literal",
+            "named": true
+          },
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "list_expression",
+            "named": true
+          },
+          {
+            "type": "map_expression",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
+            "named": true
+          },
+          {
+            "type": "select_expression",
+            "named": true
+          },
+          {
+            "type": "unset",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "select_cases",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "default_case",
+          "named": true
+        },
+        {
+          "type": "select_case",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "select_expression",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "select_cases",
+          "named": true
+        },
+        {
+          "type": "select_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "select_value",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "selection_type",
+            "named": true
           }
         ]
       }
@@ -203,6 +403,14 @@
   },
   {
     "type": "#",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
     "named": false
   },
   {
@@ -234,6 +442,10 @@
     "named": false
   },
   {
+    "type": "default",
+    "named": false
+  },
+  {
     "type": "escape_sequence",
     "named": true
   },
@@ -250,8 +462,20 @@
     "named": true
   },
   {
+    "type": "select",
+    "named": false
+  },
+  {
+    "type": "selection_type",
+    "named": true
+  },
+  {
     "type": "true",
     "named": false
+  },
+  {
+    "type": "unset",
+    "named": true
   },
   {
     "type": "{",
