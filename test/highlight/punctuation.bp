@@ -1,0 +1,15 @@
+foo (
+    // <- punctuation.bracket
+    bar = [
+        //^ punctuation.bracket
+        {
+        // <- punctuation.bracket
+            key: "value",
+            // ^ punctuation.delimiter
+            //          ^ punctuation.delimiter
+        },
+        // <- punctuation.bracket
+    ]
+    // <- punctuation.bracket
+)
+// <- punctuation.bracket

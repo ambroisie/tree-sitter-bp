@@ -9,6 +9,22 @@
 (integer_literal ("-") @operator)
 ; }}}
 
+; Punctuation {{{
+[
+ ","
+ ":"
+] @punctuation.delimiter
+
+[
+ "("
+ ")"
+ "["
+ "]"
+ "{"
+ "}"
+] @punctuation.bracket
+; }}}
+
 ; Literal {{{
 (boolean_literal) @boolean
 
