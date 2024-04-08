@@ -24,6 +24,33 @@ foo = select(release_variable("RELEASE_TEST"), {
           (unset))))))
 
 ================================================================================
+Select (soong config variable)
+================================================================================
+
+foo = select(soong_config_variable("my_namespace", "my_var"), {
+    "foo": unset,
+    "default": "bar",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (select_expression
+      (soong_config_variable
+        (selection_type)
+        (interpreted_string_literal)
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (unset))
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))))))
+
+================================================================================
 Select (no default)
 ================================================================================
 

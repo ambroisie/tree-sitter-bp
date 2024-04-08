@@ -348,6 +348,10 @@
         {
           "type": "select_value",
           "named": true
+        },
+        {
+          "type": "soong_config_variable",
+          "named": true
         }
       ]
     }
@@ -376,6 +380,60 @@
         "types": [
           {
             "type": "selection_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "soong_config_variable",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": ",",
+            "named": false
+          }
+        ]
+      },
+      "namespace": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
+            "named": true
+          }
+        ]
+      },
+      "type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "selection_type",
+            "named": true
+          }
+        ]
+      },
+      "variable": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "interpreted_string_literal",
+            "named": true
+          },
+          {
+            "type": "raw_string_literal",
             "named": true
           }
         ]
