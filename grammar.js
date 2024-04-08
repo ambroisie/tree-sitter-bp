@@ -41,14 +41,14 @@ module.exports = grammar({
     _old_module: ($) => seq(
       field("type", $.identifier),
       "{",
-      optional(commaSeparated($._colon_property)),
+      optional(commaSeparated(field("property", $._colon_property))),
       "}",
     ),
 
     _new_module: ($) => seq(
       $.identifier,
       "(",
-      optional(commaSeparated($._equal_property)),
+      optional(commaSeparated(field("property", $._equal_property))),
       ")",
     ),
 
@@ -175,7 +175,7 @@ module.exports = grammar({
 
     map_expression: ($) => seq(
       "{",
-      optional(commaSeparated($._colon_property)),
+      optional(commaSeparated(field("property", $._colon_property))),
       "}",
     ),
 

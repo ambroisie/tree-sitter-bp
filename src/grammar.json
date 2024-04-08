@@ -107,8 +107,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_colon_property"
+                  "type": "FIELD",
+                  "name": "property",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_colon_property"
+                  }
                 },
                 {
                   "type": "REPEAT",
@@ -120,8 +124,12 @@
                         "value": ","
                       },
                       {
-                        "type": "SYMBOL",
-                        "name": "_colon_property"
+                        "type": "FIELD",
+                        "name": "property",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_colon_property"
+                        }
                       }
                     ]
                   }
@@ -169,8 +177,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_equal_property"
+                  "type": "FIELD",
+                  "name": "property",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_equal_property"
+                  }
                 },
                 {
                   "type": "REPEAT",
@@ -182,8 +194,12 @@
                         "value": ","
                       },
                       {
-                        "type": "SYMBOL",
-                        "name": "_equal_property"
+                        "type": "FIELD",
+                        "name": "property",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_equal_property"
+                        }
                       }
                     ]
                   }
@@ -724,8 +740,12 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "_colon_property"
+                  "type": "FIELD",
+                  "name": "property",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_colon_property"
+                  }
                 },
                 {
                   "type": "REPEAT",
@@ -737,8 +757,12 @@
                         "value": ","
                       },
                       {
-                        "type": "SYMBOL",
-                        "name": "_colon_property"
+                        "type": "FIELD",
+                        "name": "property",
+                        "content": {
+                          "type": "SYMBOL",
+                          "name": "_colon_property"
+                        }
                       }
                     ]
                   }
