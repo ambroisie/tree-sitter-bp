@@ -1,0 +1,19 @@
+foo = 0
+//    ^ number
+
+foo = -42
+//    ^ number
+
+foo = true
+//    ^ boolean
+
+foo = "foo\nbar"
+//    ^ string
+//        ^ string.escape
+//         ^ string.escape
+//          ^ string
+//            ^ string
+
+foo = `baz`
+//    ^ string
+//        ^ string
