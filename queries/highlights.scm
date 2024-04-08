@@ -3,6 +3,10 @@
  (block_comment)
 ] @comment
 
+; Operators {{{
+(operator) @operator
+; }}}
+
 ; Literal {{{
 (boolean_literal) @boolean
 
