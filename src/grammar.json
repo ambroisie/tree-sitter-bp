@@ -21,12 +21,12 @@
         }
       ]
     },
-    "comment": {
+    "line_comment": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "#"
+          "value": "//"
         },
         {
           "type": "PATTERN",
@@ -935,7 +935,7 @@
     },
     {
       "type": "SYMBOL",
-      "name": "comment"
+      "name": "line_comment"
     }
   ],
   "conflicts": [],

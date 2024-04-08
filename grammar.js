@@ -11,7 +11,7 @@ module.exports = grammar({
 
   extras: ($) => [
     /\s+/,
-    $.comment,
+    $.line_comment,
   ],
 
   rules: {
@@ -22,7 +22,7 @@ module.exports = grammar({
       $.module,
     ),
 
-    comment: (_) => seq("#", /.*/),
+    line_comment: (_) => seq("//", /.*/),
 
     // Definitions {{{
 
