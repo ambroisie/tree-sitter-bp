@@ -51,7 +51,7 @@ module.exports = grammar({
     ),
 
     _new_module: ($) => seq(
-      $.identifier,
+      field("type", $.identifier),
       "(",
       optional(commaSeparated(
         alias(field("property", $._equal_property), $.property)
