@@ -49,6 +49,14 @@
     field: (identifier) @variable.member))
 ; }}}
 
+; Built-ins {{{
+[
+ (unset)
+ "default"
+] @variable.builtin
+(selection_type) @function.builtin
+; }}}
+
 ; Expressions {{{
 (map_expression
   (property
