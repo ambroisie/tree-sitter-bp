@@ -1,0 +1,7 @@
+foo {
+    field: {
+    // <- variable.member
+        key: 42,
+        // <- property
+    },
+}

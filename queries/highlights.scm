@@ -49,4 +49,10 @@
     field: (identifier) @variable.member))
 ; }}}
 
+; Expressions {{{
+(map_expression
+  (property
+    field: (identifier) @property))
+; }}}
+
 ; vim: sw=2 foldmethod=marker
