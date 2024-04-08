@@ -344,3 +344,27 @@ foo = {
     (identifier)
     (map_expression
       (ERROR))))
+
+================================================================================
+Binary operators
+================================================================================
+
+foo = [
+    -12 + -27 + 42,
+    "a" + "b",
+]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (list_expression
+      (binary_expression
+        (binary_expression
+          (integer_literal)
+          (integer_literal))
+        (integer_literal))
+      (binary_expression
+        (interpreted_string_literal)
+        (interpreted_string_literal)))))

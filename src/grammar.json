@@ -279,6 +279,10 @@
         {
           "type": "SYMBOL",
           "name": "map_expression"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "binary_expression"
         }
       ]
     },
@@ -829,6 +833,39 @@
           "value": "}"
         }
       ]
+    },
+    "binary_expression": {
+      "type": "PREC_LEFT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "FIELD",
+            "name": "left",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "operator",
+            "content": {
+              "type": "STRING",
+              "value": "+"
+            }
+          },
+          {
+            "type": "FIELD",
+            "name": "right",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_expr"
+            }
+          }
+        ]
+      }
     },
     "_colon_property": {
       "type": "SEQ",

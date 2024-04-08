@@ -71,6 +71,8 @@ module.exports = grammar({
       // Composites
       $.list_expression,
       $.map_expression,
+      // Operators
+      $.binary_expression,
     ),
 
     // The Blueprint scanner makes use of Go's lexer, so copy their rule
@@ -184,6 +186,12 @@ module.exports = grammar({
       )),
       "}",
     ),
+
+    binary_expression: ($) => prec.left(seq(
+      field("left", $._expr),
+      field("operator", "+"),
+      field("right", $._expr),
+    )),
 
     // }}}
 
