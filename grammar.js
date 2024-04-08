@@ -23,7 +23,7 @@ module.exports = grammar({
       $.module,
     ),
 
-    line_comment: (_) => seq("//", /.*/),
+    line_comment: (_) => seq("//", /[^\n]*/),
 
     block_comment: (_) => seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
 
