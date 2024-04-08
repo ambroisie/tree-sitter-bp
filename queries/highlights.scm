@@ -16,4 +16,8 @@
 (escape_sequence) @string.escape
 ; }}}
 
+; Declarations {{{
+(identifier) @variable
+; }}}
+
 ; vim: sw=2 foldmethod=marker
