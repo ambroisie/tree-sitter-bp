@@ -5,4 +5,5 @@ foo += 1
 //  ^ operator
 
 foo = -1 + 2
+//    ^ operator
 //       ^ operator

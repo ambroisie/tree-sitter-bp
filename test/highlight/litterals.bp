@@ -2,7 +2,7 @@ foo = 0
 //    ^ number
 
 foo = -42
-//    ^ number
+//     ^ number
 
 foo = true
 //    ^ boolean

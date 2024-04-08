@@ -5,6 +5,8 @@
 
 ; Operators {{{
 (operator) @operator
+
+(integer_literal ("-") @operator)
 ; }}}
 
 ; Literal {{{
