@@ -93,7 +93,7 @@
               tree-sitter = {
                 enable = true;
                 name = "tree-sitter tests";
-                entry = "${tree-sitter-env}/bin/tree-sitter test";
+                entry = "${tree-sitter-env}/bin/tree-sitter test --apply-all-captures";
                 pass_filenames = false;
               };
 

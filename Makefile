@@ -4,11 +4,11 @@ all:
 
 .PHONE: test
 test: all
-	tree-sitter test
+	tree-sitter test --apply-all-captures
 
 .PHONE: update-tests
 update-tests: all
-	tree-sitter test -u
+	tree-sitter test -u --apply-all-captures
 
 playground:
 	nix shell pkgs#emscripten --command tree-sitter build-wasm
