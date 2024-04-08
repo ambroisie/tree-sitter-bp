@@ -10,9 +10,11 @@ foo = true
 (source_file
   (assignment
     (identifier)
+    (operator)
     (boolean_literal))
   (assignment
     (identifier)
+    (operator)
     (boolean_literal)))
 
 ================================================================================
@@ -27,9 +29,11 @@ false = true
 (source_file
   (assignment
     (identifier)
+    (operator)
     (boolean_literal))
   (assignment
     (identifier)
+    (operator)
     (boolean_literal)))
 
 ================================================================================
@@ -44,9 +48,11 @@ foo = 42
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))
 
 ================================================================================
@@ -61,9 +67,11 @@ foo = -42
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))
 
 ================================================================================
@@ -77,6 +85,7 @@ foo = "Hello World!"
 (source_file
   (assignment
     (identifier)
+    (operator)
     (interpreted_string_literal)))
 
 ================================================================================
@@ -90,6 +99,7 @@ foo = "Hello\nWorld!"
 (source_file
   (assignment
     (identifier)
+    (operator)
     (interpreted_string_literal
       (escape_sequence))))
 
@@ -104,6 +114,7 @@ foo = `Hello\nWorld!`
 (source_file
   (assignment
     (identifier)
+    (operator)
     (raw_string_literal)))
 
 ================================================================================
@@ -117,6 +128,7 @@ foo = []
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression)))
 
 ================================================================================
@@ -130,6 +142,7 @@ foo = [42]
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (integer_literal))))
 
@@ -146,6 +159,7 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (integer_literal))))
 
@@ -162,6 +176,7 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (integer_literal))))
 
@@ -179,6 +194,7 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (integer_literal)
       (interpreted_string_literal))))
@@ -198,6 +214,7 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (list_expression
         (integer_literal))
@@ -218,6 +235,7 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (ERROR))))
 
@@ -232,6 +250,7 @@ foo = {}
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression)))
 
 ================================================================================
@@ -245,6 +264,7 @@ foo = {foo:42}
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (property
         (identifier)
@@ -263,6 +283,7 @@ foo = {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (property
         (identifier)
@@ -281,6 +302,7 @@ foo = {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (property
         (identifier)
@@ -300,6 +322,7 @@ foo = {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (property
         (identifier)
@@ -321,6 +344,7 @@ foo = {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (property
         (identifier)
@@ -342,6 +366,7 @@ foo = {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (map_expression
       (ERROR))))
 
@@ -359,12 +384,16 @@ foo = [
 (source_file
   (assignment
     (identifier)
+    (operator)
     (list_expression
       (binary_expression
         (binary_expression
           (integer_literal)
+          (operator)
           (integer_literal))
+        (operator)
         (integer_literal))
       (binary_expression
         (interpreted_string_literal)
+        (operator)
         (interpreted_string_literal)))))

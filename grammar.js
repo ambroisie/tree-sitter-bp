@@ -28,7 +28,7 @@ module.exports = grammar({
 
     assignment: ($) => seq(
       field("left", $.identifier),
-      field("operator", choice("=", "+=")),
+      field("operator", alias(choice("=", "+="), $.operator)),
       field("right", $._expr),
     ),
 
@@ -189,7 +189,7 @@ module.exports = grammar({
 
     binary_expression: ($) => prec.left(seq(
       field("left", $._expr),
-      field("operator", "+"),
+      field("operator", alias("+", $.operator)),
       field("right", $._expr),
     )),
 

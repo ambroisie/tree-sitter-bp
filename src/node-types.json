@@ -18,12 +18,8 @@
         "required": true,
         "types": [
           {
-            "type": "+=",
-            "named": false
-          },
-          {
-            "type": "=",
-            "named": false
+            "type": "operator",
+            "named": true
           }
         ]
       },
@@ -122,8 +118,8 @@
         "required": true,
         "types": [
           {
-            "type": "+",
-            "named": false
+            "type": "operator",
+            "named": true
           }
         ]
       },
@@ -649,14 +645,6 @@
     "named": false
   },
   {
-    "type": "+",
-    "named": false
-  },
-  {
-    "type": "+=",
-    "named": false
-  },
-  {
     "type": ",",
     "named": false
   },
@@ -694,6 +682,10 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "operator",
     "named": true
   },
   {

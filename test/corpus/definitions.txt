@@ -17,6 +17,7 @@ foo = 42
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))
 
 ================================================================================
@@ -30,6 +31,7 @@ foo = bar
 (source_file
   (assignment
     (identifier)
+    (operator)
     (identifier)))
 
 ================================================================================
@@ -43,6 +45,7 @@ foo += 12
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))
 
 ================================================================================
@@ -57,9 +60,11 @@ bar = 27
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))
 
 ================================================================================
@@ -78,19 +83,25 @@ qux += 1
 (source_file
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal))
   (assignment
     (identifier)
+    (operator)
     (integer_literal)))

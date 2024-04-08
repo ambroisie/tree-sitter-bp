@@ -12,6 +12,7 @@ foo = select(release_variable("RELEASE_TEST"), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (select_value
         (selection_type)
@@ -37,6 +38,7 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (soong_config_variable
         (selection_type)
@@ -66,6 +68,7 @@ foo = select(variant("arch"), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (select_value
         (selection_type)
@@ -95,6 +98,7 @@ foo = select(variant("VARIANT"), {})
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (select_value
         (selection_type)
@@ -118,6 +122,7 @@ foo = select(variant("VARIANT"), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (select_value
         (selection_type)
@@ -153,6 +158,7 @@ foo = select(variant(), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (select_expression
       (select_value
         (selection_type)
@@ -178,6 +184,7 @@ foo = select(some_unknown_type("CONDITION"), {
 (source_file
   (assignment
     (identifier)
+    (operator)
     (ERROR
       (identifier)
       (identifier)
