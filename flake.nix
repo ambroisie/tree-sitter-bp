@@ -46,6 +46,20 @@
           overlays = [ self.overlays.default ];
         };
 
+        bump-version = pkgs.writeShellScriptBin "bump-version" ''
+          set -eu
+
+          NEW_VERSION="''${1}"
+
+          ${pkgs.jq}/bin/jq ".version = \"''${NEW_VERSION}\"" package.json > package.json.tmp
+          mv package.json.tmp package.json
+          ${pkgs.gnused}/bin/sed -i -e "s/version = \"[0-9.]\\+\"/version = \"''${NEW_VERSION}\"/" Cargo.toml
+
+          git add Cargo.toml package.json
+          echo "Release ''${NEW_VERSION}" | git commit -eF -
+          git tag -a "v''${NEW_VERSION}" -m "Release ''${NEW_VERSION}"
+        '';
+
         tree-sitter-env = pkgs.stdenv.mkDerivation {
           name = "tree-sitter-env";
 
@@ -96,6 +110,7 @@
         devShells = {
           default = pkgs.mkShell {
             nativeBuildInputs = with pkgs; [
+              bump-version
               nodejs
               # FIXME: waiting on #301336
               # (tree-sitter.override { webUISupport = true; })
