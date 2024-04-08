@@ -246,8 +246,9 @@ foo = {foo:42}
   (assignment
     (identifier)
     (map_expression
-      (identifier)
-      (integer_literal))))
+      (property
+        (identifier)
+        (integer_literal)))))
 
 ================================================================================
 Map (singleton multiline)
@@ -263,8 +264,9 @@ foo = {
   (assignment
     (identifier)
     (map_expression
-      (identifier)
-      (integer_literal))))
+      (property
+        (identifier)
+        (integer_literal)))))
 
 ================================================================================
 Map (singleton trailing comma)
@@ -280,8 +282,9 @@ foo = {
   (assignment
     (identifier)
     (map_expression
-      (identifier)
-      (integer_literal))))
+      (property
+        (identifier)
+        (integer_literal)))))
 
 ================================================================================
 Map (mixed values)
@@ -298,10 +301,12 @@ foo = {
   (assignment
     (identifier)
     (map_expression
-      (identifier)
-      (integer_literal)
-      (identifier)
-      (interpreted_string_literal))))
+      (property
+        (identifier)
+        (integer_literal))
+      (property
+        (identifier)
+        (interpreted_string_literal)))))
 
 ================================================================================
 Map (map of map)
@@ -317,10 +322,12 @@ foo = {
   (assignment
     (identifier)
     (map_expression
-      (identifier)
-      (map_expression
+      (property
         (identifier)
-        (integer_literal)))))
+        (map_expression
+          (property
+            (identifier)
+            (integer_literal)))))))
 
 ================================================================================
 Map (rogue comma)

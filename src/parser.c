@@ -129,8 +129,8 @@ static const char * const ts_symbol_names[] = {
   [sym__case_value] = "_case_value",
   [sym_list_expression] = "list_expression",
   [sym_map_expression] = "map_expression",
-  [sym__colon_property] = "_colon_property",
-  [sym__equal_property] = "_equal_property",
+  [sym__colon_property] = "property",
+  [sym__equal_property] = "property",
   [aux_sym_source_file_repeat1] = "source_file_repeat1",
   [aux_sym__old_module_repeat1] = "_old_module_repeat1",
   [aux_sym__new_module_repeat1] = "_new_module_repeat1",
@@ -192,7 +192,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_list_expression] = sym_list_expression,
   [sym_map_expression] = sym_map_expression,
   [sym__colon_property] = sym__colon_property,
-  [sym__equal_property] = sym__equal_property,
+  [sym__equal_property] = sym__colon_property,
   [aux_sym_source_file_repeat1] = aux_sym_source_file_repeat1,
   [aux_sym__old_module_repeat1] = aux_sym__old_module_repeat1,
   [aux_sym__new_module_repeat1] = aux_sym__new_module_repeat1,
@@ -407,11 +407,11 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [sym__colon_property] = {
-    .visible = false,
+    .visible = true,
     .named = true,
   },
   [sym__equal_property] = {
-    .visible = false,
+    .visible = true,
     .named = true,
   },
   [aux_sym_source_file_repeat1] = {
@@ -472,104 +472,90 @@ static const char * const ts_field_names[] = {
 };
 
 static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
-  [1] = {.index = 0, .length = 4},
-  [2] = {.index = 4, .length = 3},
-  [3] = {.index = 7, .length = 3},
-  [4] = {.index = 10, .length = 1},
-  [5] = {.index = 11, .length = 4},
-  [6] = {.index = 15, .length = 3},
-  [7] = {.index = 18, .length = 3},
-  [8] = {.index = 21, .length = 1},
-  [9] = {.index = 22, .length = 2},
-  [10] = {.index = 24, .length = 7},
-  [11] = {.index = 31, .length = 6},
-  [12] = {.index = 37, .length = 6},
-  [13] = {.index = 43, .length = 6},
-  [14] = {.index = 49, .length = 2},
-  [15] = {.index = 51, .length = 2},
-  [16] = {.index = 53, .length = 2},
-  [17] = {.index = 55, .length = 4},
-  [18] = {.index = 59, .length = 2},
+  [1] = {.index = 0, .length = 2},
+  [2] = {.index = 2, .length = 1},
+  [3] = {.index = 3, .length = 3},
+  [4] = {.index = 6, .length = 1},
+  [5] = {.index = 7, .length = 4},
+  [6] = {.index = 11, .length = 3},
+  [7] = {.index = 14, .length = 3},
+  [8] = {.index = 17, .length = 1},
+  [9] = {.index = 18, .length = 2},
+  [10] = {.index = 20, .length = 5},
+  [11] = {.index = 25, .length = 2},
+  [12] = {.index = 27, .length = 4},
+  [13] = {.index = 31, .length = 4},
+  [14] = {.index = 35, .length = 2},
+  [15] = {.index = 37, .length = 2},
+  [16] = {.index = 39, .length = 2},
+  [17] = {.index = 41, .length = 4},
+  [18] = {.index = 45, .length = 2},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
   [0] =
-    {field_field, 0, .inherited = true},
     {field_property, 0, .inherited = true},
     {field_type, 0, .inherited = true},
-    {field_value, 0, .inherited = true},
-  [4] =
-    {field_field, 0, .inherited = true},
+  [2] =
     {field_property, 0, .inherited = true},
-    {field_value, 0, .inherited = true},
-  [7] =
+  [3] =
     {field_left, 0},
     {field_operator, 1},
     {field_right, 2},
-  [10] =
+  [6] =
     {field_type, 0},
+  [7] =
+    {field_field, 2, .inherited = true},
+    {field_property, 2},
+    {field_type, 0},
+    {field_value, 2, .inherited = true},
   [11] =
     {field_field, 2, .inherited = true},
     {field_property, 2},
-    {field_type, 0},
     {field_value, 2, .inherited = true},
-  [15] =
-    {field_field, 2, .inherited = true},
-    {field_property, 2},
-    {field_value, 2, .inherited = true},
-  [18] =
+  [14] =
     {field_field, 1, .inherited = true},
     {field_property, 1},
     {field_value, 1, .inherited = true},
-  [21] =
+  [17] =
     {field_element, 1},
-  [22] =
+  [18] =
     {field_field, 0},
     {field_value, 2},
-  [24] =
+  [20] =
     {field_field, 2, .inherited = true},
-    {field_field, 3, .inherited = true},
     {field_property, 2},
     {field_property, 3, .inherited = true},
     {field_type, 0},
     {field_value, 2, .inherited = true},
-    {field_value, 3, .inherited = true},
-  [31] =
-    {field_field, 0, .inherited = true},
-    {field_field, 1, .inherited = true},
+  [25] =
     {field_property, 0, .inherited = true},
     {field_property, 1, .inherited = true},
-    {field_value, 0, .inherited = true},
-    {field_value, 1, .inherited = true},
-  [37] =
+  [27] =
     {field_field, 2, .inherited = true},
-    {field_field, 3, .inherited = true},
     {field_property, 2},
     {field_property, 3, .inherited = true},
     {field_value, 2, .inherited = true},
-    {field_value, 3, .inherited = true},
-  [43] =
+  [31] =
     {field_field, 1, .inherited = true},
-    {field_field, 2, .inherited = true},
     {field_property, 1},
     {field_property, 2, .inherited = true},
     {field_value, 1, .inherited = true},
-    {field_value, 2, .inherited = true},
-  [49] =
+  [35] =
     {field_element, 1},
     {field_element, 2, .inherited = true},
-  [51] =
+  [37] =
     {field_element, 0, .inherited = true},
     {field_element, 1, .inherited = true},
-  [53] =
+  [39] =
     {field_condition, 2},
     {field_type, 0},
-  [55] =
+  [41] =
     {field_condition, 3},
     {field_namespace, 2},
     {field_type, 0},
     {field_variable, 4},
-  [59] =
+  [45] =
     {field_pattern, 0},
     {field_value, 2},
 };

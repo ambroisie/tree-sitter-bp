@@ -107,12 +107,17 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "FIELD",
-                  "name": "property",
+                  "type": "ALIAS",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "_colon_property"
-                  }
+                    "type": "FIELD",
+                    "name": "property",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_colon_property"
+                    }
+                  },
+                  "named": true,
+                  "value": "property"
                 },
                 {
                   "type": "REPEAT",
@@ -124,12 +129,17 @@
                         "value": ","
                       },
                       {
-                        "type": "FIELD",
-                        "name": "property",
+                        "type": "ALIAS",
                         "content": {
-                          "type": "SYMBOL",
-                          "name": "_colon_property"
-                        }
+                          "type": "FIELD",
+                          "name": "property",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "_colon_property"
+                          }
+                        },
+                        "named": true,
+                        "value": "property"
                       }
                     ]
                   }
@@ -177,12 +187,17 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "FIELD",
-                  "name": "property",
+                  "type": "ALIAS",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "_equal_property"
-                  }
+                    "type": "FIELD",
+                    "name": "property",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_equal_property"
+                    }
+                  },
+                  "named": true,
+                  "value": "property"
                 },
                 {
                   "type": "REPEAT",
@@ -194,12 +209,17 @@
                         "value": ","
                       },
                       {
-                        "type": "FIELD",
-                        "name": "property",
+                        "type": "ALIAS",
                         "content": {
-                          "type": "SYMBOL",
-                          "name": "_equal_property"
-                        }
+                          "type": "FIELD",
+                          "name": "property",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "_equal_property"
+                          }
+                        },
+                        "named": true,
+                        "value": "property"
                       }
                     ]
                   }
@@ -748,12 +768,17 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "FIELD",
-                  "name": "property",
+                  "type": "ALIAS",
                   "content": {
-                    "type": "SYMBOL",
-                    "name": "_colon_property"
-                  }
+                    "type": "FIELD",
+                    "name": "property",
+                    "content": {
+                      "type": "SYMBOL",
+                      "name": "_colon_property"
+                    }
+                  },
+                  "named": true,
+                  "value": "property"
                 },
                 {
                   "type": "REPEAT",
@@ -765,12 +790,17 @@
                         "value": ","
                       },
                       {
-                        "type": "FIELD",
-                        "name": "property",
+                        "type": "ALIAS",
                         "content": {
-                          "type": "SYMBOL",
-                          "name": "_colon_property"
-                        }
+                          "type": "FIELD",
+                          "name": "property",
+                          "content": {
+                            "type": "SYMBOL",
+                            "name": "_colon_property"
+                          }
+                        },
+                        "named": true,
+                        "value": "property"
                       }
                     ]
                   }

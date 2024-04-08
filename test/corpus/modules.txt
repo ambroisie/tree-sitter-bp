@@ -36,8 +36,9 @@ foo {
 (source_file
   (module
     (identifier)
-    (identifier)
-    (integer_literal)))
+    (property
+      (identifier)
+      (integer_literal))))
 
 ================================================================================
 Single property (trailing comma)
@@ -52,8 +53,9 @@ foo {
 (source_file
   (module
     (identifier)
-    (identifier)
-    (integer_literal)))
+    (property
+      (identifier)
+      (integer_literal))))
 
 ================================================================================
 Mixed values
@@ -70,12 +72,15 @@ foo {
 (source_file
   (module
     (identifier)
-    (identifier)
-    (boolean_literal)
-    (identifier)
-    (interpreted_string_literal)
-    (identifier)
-    (integer_literal)))
+    (property
+      (identifier)
+      (boolean_literal))
+    (property
+      (identifier)
+      (interpreted_string_literal))
+    (property
+      (identifier)
+      (integer_literal))))
 
 ================================================================================
 Complex value
@@ -94,11 +99,13 @@ foo {
 (source_file
   (module
     (identifier)
-    (identifier)
-    (list_expression
-      (map_expression
-        (identifier)
-        (interpreted_string_literal)))))
+    (property
+      (identifier)
+      (list_expression
+        (map_expression
+          (property
+            (identifier)
+            (interpreted_string_literal)))))))
 
 ================================================================================
 Rogue comma
