@@ -169,7 +169,7 @@ module.exports = grammar({
 
     list_expression: ($) => seq(
       "[",
-      optional(commaSeparated($._expr)),
+      optional(commaSeparated(field("element", $._expr))),
       "]",
     ),
 
