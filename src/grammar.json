@@ -635,8 +635,13 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "SYMBOL",
-                  "name": "default_case"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "default_case"
+                  },
+                  "named": true,
+                  "value": "select_case"
                 },
                 {
                   "type": "STRING",

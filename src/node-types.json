@@ -178,68 +178,6 @@
     "fields": {}
   },
   {
-    "type": "default_case",
-    "named": true,
-    "fields": {
-      "pattern": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "default",
-            "named": true
-          }
-        ]
-      },
-      "value": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "binary_expression",
-            "named": true
-          },
-          {
-            "type": "boolean_literal",
-            "named": true
-          },
-          {
-            "type": "identifier",
-            "named": true
-          },
-          {
-            "type": "integer_literal",
-            "named": true
-          },
-          {
-            "type": "interpreted_string_literal",
-            "named": true
-          },
-          {
-            "type": "list_expression",
-            "named": true
-          },
-          {
-            "type": "map_expression",
-            "named": true
-          },
-          {
-            "type": "raw_string_literal",
-            "named": true
-          },
-          {
-            "type": "select_expression",
-            "named": true
-          },
-          {
-            "type": "unset",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
     "type": "integer_literal",
     "named": true,
     "fields": {}
@@ -416,6 +354,10 @@
         "required": true,
         "types": [
           {
+            "type": "default",
+            "named": true
+          },
+          {
             "type": "interpreted_string_literal",
             "named": true
           },
@@ -481,10 +423,6 @@
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "default_case",
-          "named": true
-        },
         {
           "type": "select_case",
           "named": true

@@ -155,7 +155,7 @@ module.exports = grammar({
       "{",
       optional(trailingCommaSeparated($.select_case)),
       // default *must* be the last one, enforced at parse-time...
-      optional(seq($.default_case, ",")),
+      optional(seq(alias($.default_case, $.select_case), ",")),
       "}",
     ),
 

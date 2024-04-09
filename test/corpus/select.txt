@@ -21,7 +21,7 @@ foo = select(release_variable("RELEASE_TEST"), {
         (select_case
           (interpreted_string_literal)
           (interpreted_string_literal))
-        (default_case
+        (select_case
           (default)
           (unset))))))
 
@@ -136,7 +136,7 @@ foo = select(variant("VARIANT"), {
           (interpreted_string_literal)
           (interpreted_string_literal))
         (ERROR
-          (default_case
+          (select_case
             (default)
             (unset)))
         (select_case
@@ -169,7 +169,7 @@ foo = select(variant(), {
         (select_case
           (interpreted_string_literal)
           (unset))
-        (default_case
+        (select_case
           (default)
           (interpreted_string_literal))))))
 
