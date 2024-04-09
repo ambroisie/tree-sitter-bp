@@ -192,3 +192,26 @@ foo = select(some_unknown_type("CONDITION"), {
       (interpreted_string_literal))
     (interpreted_string_literal))
   (ERROR))
+
+================================================================================
+Select as an identifier
+================================================================================
+
+select = 42
+
+foo {
+    select: false,
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (integer_literal))
+  (module
+    (identifier)
+    (property
+      (identifier)
+      (boolean_literal))))
