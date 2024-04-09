@@ -49,7 +49,7 @@
 ; Built-ins {{{
 [
  (unset)
- "default"
+ (default)
 ] @variable.builtin
 (selection_type) @function.builtin
 ; }}}

@@ -187,7 +187,7 @@
         "types": [
           {
             "type": "default",
-            "named": false
+            "named": true
           }
         ]
       },
@@ -668,7 +668,7 @@
   },
   {
     "type": "default",
-    "named": false
+    "named": true
   },
   {
     "type": "escape_sequence",

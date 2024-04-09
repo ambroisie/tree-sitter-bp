@@ -166,7 +166,7 @@ module.exports = grammar({
     ),
 
     default_case: ($) => seq(
-      field("pattern", "default"),
+      field("pattern", alias("default", $.default)),
       ":",
       field("value", $._case_value),
     ),

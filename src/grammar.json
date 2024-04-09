@@ -687,7 +687,12 @@
           "type": "FIELD",
           "name": "pattern",
           "content": {
-            "type": "STRING",
+            "type": "ALIAS",
+            "content": {
+              "type": "STRING",
+              "value": "default"
+            },
+            "named": true,
             "value": "default"
           }
         },

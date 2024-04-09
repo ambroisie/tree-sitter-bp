@@ -335,7 +335,7 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
   [anon_sym_default] = {
     .visible = true,
-    .named = false,
+    .named = true,
   },
   [anon_sym_unset] = {
     .visible = true,
