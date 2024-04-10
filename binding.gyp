@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_blueprint_binding",
+      "target_name": "tree_sitter_bp_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

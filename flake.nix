@@ -122,9 +122,9 @@
         };
 
         packages = {
-          default = packages.tree-sitter-blueprint;
+          default = packages.tree-sitter-bp;
 
-          inherit (pkgs.tree-sitter.passthru.builtGrammars) tree-sitter-blueprint;
+          inherit (pkgs.tree-sitter.passthru.builtGrammars) tree-sitter-bp;
 
           inherit (pkgs) tree-sitter;
         };
@@ -133,7 +133,7 @@
         default = final: prev: {
           tree-sitter = prev.tree-sitter.override {
             extraGrammars = {
-              tree-sitter-blueprint = {
+              tree-sitter-bp = {
                 src = ./.;
               };
             };

@@ -7,7 +7,7 @@ function trailingCommaSeparated(elem) {
 }
 
 module.exports = grammar({
-  name: "blueprint",
+  name: "bp",
 
   extras: ($) => [
     /\s+/,

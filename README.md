@@ -1,4 +1,4 @@
-# tree-sitter-blueprint
+# tree-sitter-bp
 
 Tree-sitter grammar for [Blueprint][blueprint-aosp], the meta-build system used
 in AOSP for its `Android.bp` files.

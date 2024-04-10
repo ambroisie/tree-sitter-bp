@@ -3,6 +3,6 @@
 /.pre-commit-config.yaml
 
 # Tree-sitter artifact
-/tree-sitter-blueprint.wasm
+/tree-sitter-bp.wasm
 # Rust bindings
 /target

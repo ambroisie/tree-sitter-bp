@@ -1,5 +1,5 @@
 {
-  "name": "blueprint",
+  "name": "bp",
   "rules": {
     "source_file": {
       "type": "REPEAT",

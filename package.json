@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-blueprint",
+  "name": "tree-sitter-bp",
   "version": "0.1.0",
   "description": "Blueprint grammar for tree-sitter",
   "main": "bindings/node",
@@ -18,7 +18,7 @@
   },
   "tree-sitter": [
     {
-      "scope": "source.blueprint",
+      "scope": "source.bp",
       "file-types": [
         "bp"
       ],
