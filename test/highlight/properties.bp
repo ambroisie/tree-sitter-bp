@@ -1,6 +1,6 @@
 foo {
     field: {
-    // <- variable.member
+    // <- variable.parameter
         key: 42,
         // <- property
     },

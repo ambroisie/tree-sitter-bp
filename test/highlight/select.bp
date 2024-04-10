@@ -11,5 +11,5 @@ select = 42
 // Or module property
 foo {
     select: 42,
-    // <- variable.member
+    // <- variable.parameter
 }

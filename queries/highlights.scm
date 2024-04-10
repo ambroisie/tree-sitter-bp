@@ -42,11 +42,11 @@
 (identifier) @variable
 
 (module
-  type: (identifier) @module)
+  type: (identifier) @function.call)
 
 (module
   (property
-    field: (identifier) @variable.member))
+    field: (identifier) @variable.parameter))
 ; }}}
 
 ; Built-ins {{{

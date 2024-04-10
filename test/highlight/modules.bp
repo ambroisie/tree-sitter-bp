@@ -1,21 +1,21 @@
 foo {}
-// <- module
+// <- function.call
 
 foo ()
-// <- module
+// <- function.call
 
 foo {
-// <- module
+// <- function.call
     field: 12,
-    // <- variable.member
+    // <- variable.parameter
     another_field: 27,
-    // <- variable.member
+    // <- variable.parameter
 }
 
 foo (
-// <- module
+// <- function.call
     field = 42,
-    // <- variable.member
+    // <- variable.parameter
     done = false,
-    // <- variable.member
+    // <- variable.parameter
 )
