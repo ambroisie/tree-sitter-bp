@@ -1,10 +1,9 @@
 /* This is a comment             */
-/* <- comment
-            ^ comment
-                                ^ comment
- */
+// <- comment
+//          ^ comment
+//                              ^ comment
+
 // And another comment
-/* <- comment
-            ^ comment
-                     ^ comment
- */
+// <- comment
+//          ^ comment
+//                   ^ comment

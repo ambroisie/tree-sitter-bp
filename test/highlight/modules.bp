@@ -4,16 +4,16 @@ foo {}
 foo ()
 // <- function.call
 
-foo {
-// <- function.call
+some_module {
+    // ^ function.call
     field: 12,
     // <- variable.parameter
     another_field: 27,
     // <- variable.parameter
 }
 
-foo (
-// <- function.call
+some_module (
+    // ^ function.call
     field = 42,
     // <- variable.parameter
     done = false,

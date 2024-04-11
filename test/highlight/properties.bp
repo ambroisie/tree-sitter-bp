@@ -1,6 +1,6 @@
 foo {
-    field: {
-    // <- variable.parameter
+    some_field: {
+        // ^ variable.parameter
         key: 42,
         // <- property
     },
