@@ -10,6 +10,7 @@ test: all
 update-tests: all
 	tree-sitter test -u --apply-all-captures
 
+.PHONY: playground
 playground:
 	nix shell pkgs#emscripten --command tree-sitter build-wasm
 	tree-sitter playground
