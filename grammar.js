@@ -11,8 +11,7 @@ module.exports = grammar({
 
   extras: ($) => [
     /\s+/,
-    $.line_comment,
-    $.block_comment,
+    $.comment,
   ],
 
   rules: {
@@ -23,9 +22,10 @@ module.exports = grammar({
       $.module,
     ),
 
-    line_comment: (_) => seq("//", /[^\n]*/),
-
-    block_comment: (_) => seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+    comment: (_) => choice(
+      seq("//", /[^\n]*/),
+      seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, '/'),
+    ),
 
     // Definitions {{{
 

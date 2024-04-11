@@ -1,7 +1,4 @@
-[
- (line_comment)
- (block_comment)
-] @comment
+(comment) @comment
 
 ; Operators {{{
 (operator) @operator
