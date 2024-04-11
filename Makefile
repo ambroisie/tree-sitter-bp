@@ -1,12 +1,12 @@
-.PHONE: all
+.PHONY: all
 all:
 	tree-sitter generate
 
-.PHONE: test
+.PHONY: test
 test: all
 	tree-sitter test --apply-all-captures
 
-.PHONE: update-tests
+.PHONY: update-tests
 update-tests: all
 	tree-sitter test -u --apply-all-captures
 
