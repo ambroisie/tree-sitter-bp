@@ -37,6 +37,7 @@
     }:
     let
       inherit (flake-utils.lib) eachDefaultSystem;
+      inherit (nixpkgs) lib;
     in
     eachDefaultSystem
       (system:
@@ -44,6 +45,25 @@
         pkgs = import nixpkgs {
           inherit system;
           overlays = [ self.overlays.default ];
+        };
+
+        nvim-test-runner = pkgs.writeShellApplication {
+          name = "nvim-test-runner";
+
+          runtimeInputs = with pkgs; [
+            highlight-assertions
+            neovim
+          ];
+
+          text = ''
+            export NVIM_PLENARY='${pkgs.vimPlugins.plenary-nvim}'
+            export NVIM_TREESITTER='${pkgs.vimPlugins.nvim-treesitter}'
+            export NVIM_TREESITTER_TEXTOBJECTS='${pkgs.vimPlugins.nvim-treesitter-textobjects}'
+            export NVIM_TREESITTER_PARSER='${pkgs.vimPlugins.nvim-treesitter.grammarToPlugin self.packages.${system}.tree-sitter-bp}'
+
+            nvim --headless --noplugin -u ${scripts/minimal_init.lua} \
+                -c "PlenaryBustedDirectory test/ { minimal_init = '${./scripts/minimal_init.lua}' }"
+          '';
         };
 
         bump-version = pkgs.writeShellScriptBin "bump-version" ''
@@ -90,6 +110,13 @@
                 enable = true;
               };
 
+              nvim-test-runner = {
+                enable = true;
+                name = "nvim tests";
+                entry = "${lib.getExe nvim-test-runner}";
+                pass_filenames = false;
+              };
+
               tree-sitter = {
                 enable = true;
                 name = "tree-sitter tests";
@@ -112,6 +139,7 @@
             nativeBuildInputs = with pkgs; [
               bump-version
               nodejs
+              nvim-test-runner
               # FIXME: waiting on #301336
               # (tree-sitter.override { webUISupport = true; })
               tree-sitter

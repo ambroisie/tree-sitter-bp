@@ -5,10 +5,12 @@ all:
 .PHONY: test
 test: all
 	tree-sitter test --apply-all-captures
+	nvim-test-runner
 
 .PHONY: update-tests
 update-tests: all
 	tree-sitter test -u --apply-all-captures
+	nvim-test-runner
 
 .PHONY: playground
 playground:
