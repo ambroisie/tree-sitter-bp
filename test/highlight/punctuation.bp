@@ -6,9 +6,21 @@ foo (
             key: "value",
             // ^ punctuation.delimiter
             //          ^ punctuation.delimiter
+            another: {},
+            //       ^ punctuation.bracket
+            //        ^ punctuation.bracket
         },
         // <- punctuation.bracket
-    ]
+    ],
+    // <- punctuation.bracket
+    baz = {
+        //^ punctuation.bracket
+        key: [],
+        // ^ punctuation.delimiter
+        //   ^ punctuation.bracket
+        //    ^ punctuation.bracket
+        //     ^ punctuation.delimiter
+    },
     // <- punctuation.bracket
 )
 // <- punctuation.bracket
