@@ -198,6 +198,35 @@ foo = select(some_unknown_type("CONDITION"), {
   (ERROR))
 
 ================================================================================
+Select (multiple type arguments)
+================================================================================
+
+foo = select(release_variable("ONE", "TWO"), {
+    "d": "d2",
+    default: "f2",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (selection_type)
+        (ERROR
+          (interpreted_string_literal))
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (default)
+          (interpreted_string_literal))))))
+
+================================================================================
 Select as an identifier
 ================================================================================
 
