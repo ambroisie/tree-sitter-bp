@@ -1,0 +1,28 @@
+foo = select(variant("VARIANT"), {
+    "x86": "my_x86",
+    "x86_64": [
+        "x86",
+        "x64",
+    ],
+    "arm": {
+        some: "aarch",
+        value: "aarch64",
+    },
+    default: 0,
+})
+
+foo = select(
+    variant("VARIANT"),
+    {
+        "x86": "my_x86",
+        "x86_64": [
+            "x86",
+            "x64",
+        ],
+        "arm": {
+            some: "aarch",
+            value: "aarch64",
+        },
+        default: 0,
+    }
+)
