@@ -14,5 +14,5 @@ update-tests: all
 
 .PHONY: playground
 playground:
-	nix shell pkgs#emscripten --command tree-sitter build-wasm
+	nix shell pkgs#emscripten --command tree-sitter build --wasm
 	tree-sitter playground

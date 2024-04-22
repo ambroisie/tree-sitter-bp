@@ -140,9 +140,7 @@
               bump-version
               nodejs
               nvim-test-runner
-              # FIXME: waiting on #301336
-              # (tree-sitter.override { webUISupport = true; })
-              tree-sitter
+              (tree-sitter.override { webUISupport = true; })
             ];
 
             inherit (checks.pre-commit) shellHook;
