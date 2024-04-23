@@ -15,8 +15,9 @@ foo = select(release_variable("RELEASE_TEST"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -44,9 +45,10 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -76,8 +78,9 @@ foo = select(variant("arch"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -110,8 +113,9 @@ foo = select(variant("VARIANT"), {})
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases))))
 
 ================================================================================
@@ -134,8 +138,9 @@ foo = select(variant("VARIANT"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -175,7 +180,8 @@ foo = select(variant(), {
     (operator)
     (select_expression
       (select_value
-        (identifier))
+        (condition
+          (identifier)))
       (select_cases
         (select_case
           (select_pattern
@@ -203,8 +209,9 @@ foo = select(some_unknown_type("CONDITION"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -232,9 +239,10 @@ foo = select(release_variable("ONE", "TWO"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern
@@ -262,9 +270,10 @@ foo = select(some_boolean("VALUE",), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal)
-        (ERROR))
+        (condition
+          (identifier)
+          (interpreted_string_literal)
+          (ERROR)))
       (select_cases
         (select_case
           (select_pattern
@@ -294,8 +303,10 @@ foo = select((
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (identifier))
+        (condition
+          (identifier))
+        (condition
+          (identifier)))
       (select_cases
         (select_case
           (select_pattern
@@ -319,8 +330,10 @@ foo = select((arch(), os()), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (identifier))
+        (condition
+          (identifier))
+        (condition
+          (identifier)))
       (select_cases
         (select_case
           (select_pattern
@@ -345,8 +358,9 @@ foo = select(some_boolean("IS_TRUE"), {
     (operator)
     (select_expression
       (select_value
-        (identifier)
-        (interpreted_string_literal))
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
       (select_cases
         (select_case
           (select_pattern

@@ -491,7 +491,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_select_value"
+          "name": "condition"
         },
         {
           "type": "SEQ",
@@ -505,7 +505,7 @@
               "members": [
                 {
                   "type": "SYMBOL",
-                  "name": "_select_value"
+                  "name": "condition"
                 },
                 {
                   "type": "REPEAT",
@@ -518,7 +518,7 @@
                       },
                       {
                         "type": "SYMBOL",
-                        "name": "_select_value"
+                        "name": "condition"
                       }
                     ]
                   }
@@ -545,7 +545,7 @@
         }
       ]
     },
-    "_select_value": {
+    "condition": {
       "type": "SEQ",
       "members": [
         {

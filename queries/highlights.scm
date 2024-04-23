@@ -51,7 +51,7 @@
  (unset)
  (default)
 ] @variable.builtin
-(select_value
+(condition
  name: (identifier) @function.builtin)
 ; }}}
 

@@ -132,11 +132,11 @@ module.exports = grammar({
     ),
 
     select_value: ($) => choice(
-      $._select_value,
-      seq("(", commaSeparatedOptTrailing($._select_value), ")"),
+      $.condition,
+      seq("(", commaSeparatedOptTrailing($.condition), ")"),
     ),
 
-    _select_value: ($) => seq(
+    condition: ($) => seq(
       field("name", $.identifier),
       "(",
       field("arguments", optional(commaSeparatedNoTrailing($._string_literal))),
