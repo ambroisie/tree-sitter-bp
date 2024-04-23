@@ -143,6 +143,7 @@ module.exports = grammar({
     select_case: ($) => seq(
       field("pattern", choice(
         $._string_literal,
+        $.boolean_literal,
         alias("default", $.default),
       )),
       ":",

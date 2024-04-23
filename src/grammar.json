@@ -607,6 +607,10 @@
                 "name": "_string_literal"
               },
               {
+                "type": "SYMBOL",
+                "name": "boolean_literal"
+              },
+              {
                 "type": "ALIAS",
                 "content": {
                   "type": "STRING",
