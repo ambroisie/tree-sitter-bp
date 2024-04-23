@@ -154,21 +154,16 @@ module.exports = grammar({
     select_cases: ($) => seq(
       "{",
       optional(trailingCommaSeparated($.select_case)),
-      // default *must* be the last one, enforced at parse-time...
-      optional(seq(alias($.default_case, $.select_case), ",")),
       "}",
     ),
 
     select_case: ($) => seq(
-      field("pattern", $._string_literal),
+      field("pattern", choice(
+        $._string_literal,
+        alias("default", $.default),
+      )),
       ":",
       field("value", $._case_value)
-    ),
-
-    default_case: ($) => seq(
-      field("pattern", alias("default", $.default)),
-      ":",
-      field("value", $._case_value),
     ),
 
     _case_value: ($) => choice(

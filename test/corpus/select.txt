@@ -135,10 +135,9 @@ foo = select(variant("VARIANT"), {
         (select_case
           (interpreted_string_literal)
           (interpreted_string_literal))
-        (ERROR
-          (select_case
-            (default)
-            (unset)))
+        (select_case
+          (default)
+          (unset))
         (select_case
           (interpreted_string_literal)
           (interpreted_string_literal))
