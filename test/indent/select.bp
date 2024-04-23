@@ -26,3 +26,35 @@ foo = select(
         default: 0,
     }
 )
+
+foo = select((
+    arch(),
+    os(),
+), {
+    (default, default): [],
+})
+
+foo = select(
+    (arch(), os()),
+    {
+        (default, default): [],
+    }
+)
+
+// We're really getting into more and more unlikely choices here...
+foo = select(
+    (
+        arch(),
+        os(),
+    ),
+    {
+        (default, default): [],
+    }
+)
+
+foo = select((arch(), os()), {
+    (
+        default,
+        default,
+    ): [],
+})

@@ -11,6 +11,15 @@
 (select_expression
   ")" @indent.branch)
 
+(select_value) @indent.begin
+(select_value
+  ")" @indent.branch)
+
+(select_pattern
+  "(" @indent.begin)
+(select_pattern
+  ")" @indent.branch)
+
 (select_cases) @indent.begin
 (select_cases
   "}" @indent.branch)

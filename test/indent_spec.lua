@@ -1,6 +1,7 @@
 package.path = package.path .. ";" .. vim.env.NVIM_TREESITTER .. "/?.lua"
 
 local Runner = require("tests.indent.common").Runner
+local XFAIL = require("tests.indent.common").XFAIL
 
 -- FIXME: path to root
 local runner = Runner:new(it, ".", {
@@ -19,7 +20,7 @@ describe("indent Blueprint:", function()
         })
         runner:whole_file("test/indent/", {
             expected_failures = {
-                -- NOTE: none for now
+                "test/indent/select.bp",
             },
         })
     end)
@@ -47,5 +48,14 @@ describe("indent Blueprint:", function()
         runner:new_line("test/indent/select.bp", { on_line = 26, text = 'default: "value"', indent = 8 }, "default case, trailing, alternate formatting")
         runner:new_line("test/indent/select.bp", { on_line = 26, text = '}', indent = 4 }, "select cases closing delimiter, alternate formatting")
         runner:new_line("test/indent/select.bp", { on_line = 27, text = ')', indent = 0 }, "select expression closing delimiter, alternate formatting")
+        runner:new_line("test/indent/select.bp", { on_line = 30, text = 'device()', indent = 4 }, "multi-valued select condition, begin")
+        runner:new_line("test/indent/select.bp", { on_line = 31, text = 'device()', indent = 4 }, "multi-valued select condition, middle")
+        runner:new_line("test/indent/select.bp", { on_line = 32, text = 'device()', indent = 4 }, "multi-valued select condition, end")
+        runner:new_line("test/indent/select.bp", { on_line = 46, text = 'device()', indent = 8 }, "multi-valued select condition, begin, alternate formatting")
+        runner:new_line("test/indent/select.bp", { on_line = 47, text = 'device()', indent = 8 }, "multi-valued select condition, middle, alternate formatting")
+        runner:new_line("test/indent/select.bp", { on_line = 48, text = 'device()', indent = 8 }, "multi-valued select condition, end, alternate formatting")
+        runner:new_line("test/indent/select.bp", { on_line = 56, text = 'default,', indent = 8 }, "multi-valued select case, begin", XFAIL)
+        runner:new_line("test/indent/select.bp", { on_line = 57, text = 'default,', indent = 8 }, "multi-valued select case, middle", XFAIL)
+        runner:new_line("test/indent/select.bp", { on_line = 58, text = 'default,', indent = 8 }, "multi-valued select case, end", XFAIL)
     end)
 end)
