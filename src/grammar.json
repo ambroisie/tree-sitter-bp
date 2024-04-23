@@ -493,13 +493,8 @@
           "type": "FIELD",
           "name": "name",
           "content": {
-            "type": "ALIAS",
-            "content": {
-              "type": "SYMBOL",
-              "name": "identifier"
-            },
-            "named": true,
-            "value": "selection_type"
+            "type": "SYMBOL",
+            "name": "identifier"
           }
         },
         {

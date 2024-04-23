@@ -51,7 +51,8 @@
  (unset)
  (default)
 ] @variable.builtin
-(selection_type) @function.builtin
+(select_value
+ name: (identifier) @function.builtin)
 ; }}}
 
 ; Expressions {{{

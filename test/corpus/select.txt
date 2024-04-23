@@ -15,7 +15,7 @@ foo = select(release_variable("RELEASE_TEST"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal))
       (select_cases
         (select_case
@@ -42,7 +42,7 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal)
         (interpreted_string_literal))
       (select_cases
@@ -72,7 +72,7 @@ foo = select(variant("arch"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal))
       (select_cases
         (select_case
@@ -102,7 +102,7 @@ foo = select(variant("VARIANT"), {})
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal))
       (select_cases))))
 
@@ -126,7 +126,7 @@ foo = select(variant("VARIANT"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal))
       (select_cases
         (select_case
@@ -162,7 +162,7 @@ foo = select(variant(), {
     (operator)
     (select_expression
       (select_value
-        (selection_type))
+        (identifier))
       (select_cases
         (select_case
           (interpreted_string_literal)
@@ -188,7 +188,7 @@ foo = select(some_unknown_type("CONDITION"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal))
       (select_cases
         (select_case
@@ -215,7 +215,7 @@ foo = select(release_variable("ONE", "TWO"), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
+        (identifier)
         (interpreted_string_literal)
         (interpreted_string_literal))
       (select_cases

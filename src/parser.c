@@ -8,7 +8,7 @@
 #define STATE_COUNT 117
 #define LARGE_STATE_COUNT 2
 #define SYMBOL_COUNT 59
-#define ALIAS_COUNT 1
+#define ALIAS_COUNT 0
 #define TOKEN_COUNT 30
 #define EXTERNAL_TOKEN_COUNT 0
 #define FIELD_COUNT 11
@@ -74,7 +74,6 @@ enum ts_symbol_identifiers {
   aux_sym_select_value_repeat1 = 56,
   aux_sym_select_cases_repeat1 = 57,
   aux_sym_list_expression_repeat1 = 58,
-  alias_sym_selection_type = 59,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -137,7 +136,6 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_select_value_repeat1] = "select_value_repeat1",
   [aux_sym_select_cases_repeat1] = "select_cases_repeat1",
   [aux_sym_list_expression_repeat1] = "list_expression_repeat1",
-  [alias_sym_selection_type] = "selection_type",
 };
 
 static const TSSymbol ts_symbol_map[] = {
@@ -200,7 +198,6 @@ static const TSSymbol ts_symbol_map[] = {
   [aux_sym_select_value_repeat1] = aux_sym_select_value_repeat1,
   [aux_sym_select_cases_repeat1] = aux_sym_select_cases_repeat1,
   [aux_sym_list_expression_repeat1] = aux_sym_list_expression_repeat1,
-  [alias_sym_selection_type] = alias_sym_selection_type,
 };
 
 static const TSSymbolMetadata ts_symbol_metadata[] = {
@@ -440,10 +437,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [alias_sym_selection_type] = {
-    .visible = true,
-    .named = true,
-  },
 };
 
 enum ts_field_identifiers {
@@ -563,18 +556,6 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   [0] = {0},
   [2] = {
     [1] = anon_sym_PLUS_EQ,
-  },
-  [14] = {
-    [0] = alias_sym_selection_type,
-  },
-  [15] = {
-    [0] = alias_sym_selection_type,
-  },
-  [16] = {
-    [0] = alias_sym_selection_type,
-  },
-  [17] = {
-    [0] = alias_sym_selection_type,
   },
 };
 

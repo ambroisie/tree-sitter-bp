@@ -476,7 +476,7 @@
         "required": true,
         "types": [
           {
-            "type": "selection_type",
+            "type": "identifier",
             "named": true
           }
         ]
@@ -577,10 +577,6 @@
   {
     "type": "select",
     "named": false
-  },
-  {
-    "type": "selection_type",
-    "named": true
   },
   {
     "type": "true",
