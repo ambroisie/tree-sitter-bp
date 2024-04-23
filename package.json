@@ -43,6 +43,11 @@
       "file-types": [
         "bp"
       ],
+      "folds": "queries/folds.scm",
+      "highlights": "queries/highlights.scm",
+      "indents": "queries/indents.scm",
+      "injections": "queries/injections.scm",
+      "tags": "queries/tags.scm",
       "injection-regex": "bp"
     }
   ]
