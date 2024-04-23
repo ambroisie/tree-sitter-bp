@@ -453,7 +453,7 @@
     "type": "select_value",
     "named": true,
     "fields": {
-      "condition": {
+      "arguments": {
         "multiple": true,
         "required": false,
         "types": [
@@ -471,7 +471,7 @@
           }
         ]
       },
-      "type": {
+      "name": {
         "multiple": false,
         "required": true,
         "types": [

@@ -128,9 +128,9 @@ module.exports = grammar({
     ),
 
     select_value: ($) => seq(
-      field("type", alias($.identifier, $.selection_type)),
+      field("name", alias($.identifier, $.selection_type)),
       "(",
-      field("condition", optional(commaSeparated($._string_literal))),
+      field("arguments", optional(commaSeparated($._string_literal))),
       ")",
     ),
 

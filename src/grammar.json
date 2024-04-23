@@ -491,7 +491,7 @@
       "members": [
         {
           "type": "FIELD",
-          "name": "type",
+          "name": "name",
           "content": {
             "type": "ALIAS",
             "content": {
@@ -508,7 +508,7 @@
         },
         {
           "type": "FIELD",
-          "name": "condition",
+          "name": "arguments",
           "content": {
             "type": "CHOICE",
             "members": [

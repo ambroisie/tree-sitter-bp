@@ -11,7 +11,7 @@
 #define ALIAS_COUNT 1
 #define TOKEN_COUNT 30
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 10
+#define FIELD_COUNT 11
 #define MAX_ALIAS_SEQUENCE_LENGTH 6
 #define PRODUCTION_ID_COUNT 19
 
@@ -447,24 +447,26 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
 };
 
 enum ts_field_identifiers {
-  field_condition = 1,
+  field_arguments = 1,
   field_element = 2,
   field_field = 3,
   field_left = 4,
-  field_operator = 5,
-  field_pattern = 6,
-  field_property = 7,
-  field_right = 8,
-  field_type = 9,
-  field_value = 10,
+  field_name = 5,
+  field_operator = 6,
+  field_pattern = 7,
+  field_property = 8,
+  field_right = 9,
+  field_type = 10,
+  field_value = 11,
 };
 
 static const char * const ts_field_names[] = {
   [0] = NULL,
-  [field_condition] = "condition",
+  [field_arguments] = "arguments",
   [field_element] = "element",
   [field_field] = "field",
   [field_left] = "left",
+  [field_name] = "name",
   [field_operator] = "operator",
   [field_pattern] = "pattern",
   [field_property] = "property",
@@ -487,11 +489,11 @@ static const TSFieldMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
   [11] = {.index = 23, .length = 4},
   [12] = {.index = 27, .length = 2},
   [13] = {.index = 29, .length = 2},
-  [14] = {.index = 5, .length = 1},
-  [15] = {.index = 31, .length = 2},
-  [16] = {.index = 33, .length = 3},
-  [17] = {.index = 36, .length = 4},
-  [18] = {.index = 40, .length = 2},
+  [14] = {.index = 31, .length = 1},
+  [15] = {.index = 32, .length = 2},
+  [16] = {.index = 34, .length = 3},
+  [17] = {.index = 37, .length = 4},
+  [18] = {.index = 41, .length = 2},
 };
 
 static const TSFieldMapEntry ts_field_map_entries[] = {
@@ -539,18 +541,20 @@ static const TSFieldMapEntry ts_field_map_entries[] = {
     {field_element, 0, .inherited = true},
     {field_element, 1, .inherited = true},
   [31] =
-    {field_condition, 2},
-    {field_type, 0},
-  [33] =
-    {field_condition, 2},
-    {field_condition, 3},
-    {field_type, 0},
-  [36] =
-    {field_condition, 2},
-    {field_condition, 3},
-    {field_condition, 4},
-    {field_type, 0},
-  [40] =
+    {field_name, 0},
+  [32] =
+    {field_arguments, 2},
+    {field_name, 0},
+  [34] =
+    {field_arguments, 2},
+    {field_arguments, 3},
+    {field_name, 0},
+  [37] =
+    {field_arguments, 2},
+    {field_arguments, 3},
+    {field_arguments, 4},
+    {field_name, 0},
+  [41] =
     {field_pattern, 0},
     {field_value, 2},
 };
