@@ -1,4 +1,4 @@
-function commaSeparated(elem) {
+function commaSeparatedOptTrailing(elem) {
   return seq(elem, repeat(seq(",", elem)), optional(","))
 }
 
@@ -6,7 +6,7 @@ function commaSeparatedNoTrailing(elem) {
   return seq(elem, repeat(seq(",", elem)))
 }
 
-function trailingCommaSeparated(elem) {
+function commaSeparatedTrailing(elem) {
   return repeat(seq(elem, ","))
 }
 
@@ -48,7 +48,7 @@ module.exports = grammar({
     _old_module: ($) => seq(
       field("type", $.identifier),
       "{",
-      optional(commaSeparated(
+      optional(commaSeparatedOptTrailing(
         alias(field("property", $._colon_property), $.property)
       )),
       "}",
@@ -57,7 +57,7 @@ module.exports = grammar({
     _new_module: ($) => seq(
       field("type", $.identifier),
       "(",
-      optional(commaSeparated(
+      optional(commaSeparatedOptTrailing(
         alias(field("property", $._equal_property), $.property)
       )),
       ")",
@@ -140,7 +140,7 @@ module.exports = grammar({
 
     select_cases: ($) => seq(
       "{",
-      optional(trailingCommaSeparated($.select_case)),
+      optional(commaSeparatedTrailing($.select_case)),
       "}",
     ),
 
@@ -161,13 +161,13 @@ module.exports = grammar({
 
     list_expression: ($) => seq(
       "[",
-      optional(commaSeparated(field("element", $._expr))),
+      optional(commaSeparatedOptTrailing(field("element", $._expr))),
       "]",
     ),
 
     map_expression: ($) => seq(
       "{",
-      optional(commaSeparated(
+      optional(commaSeparatedOptTrailing(
         alias(field("property", $._colon_property), $.property)
       )),
       "}",
