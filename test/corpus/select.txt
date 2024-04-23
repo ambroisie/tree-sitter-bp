@@ -19,10 +19,12 @@ foo = select(release_variable("RELEASE_TEST"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (default)
+          (select_pattern
+            (default))
           (unset))))))
 
 ================================================================================
@@ -47,10 +49,12 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (unset))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -76,16 +80,20 @@ foo = select(variant("arch"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -130,19 +138,24 @@ foo = select(variant("VARIANT"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (default)
+          (select_pattern
+            (default))
           (unset))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -165,10 +178,12 @@ foo = select(variant(), {
         (identifier))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (unset))
         (select_case
-          (default)
+          (select_pattern
+            (default))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -192,10 +207,12 @@ foo = select(some_unknown_type("CONDITION"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (default)
+          (select_pattern
+            (default))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -220,10 +237,12 @@ foo = select(release_variable("ONE", "TWO"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (interpreted_string_literal)
+          (select_pattern
+            (interpreted_string_literal))
           (interpreted_string_literal))
         (select_case
-          (default)
+          (select_pattern
+            (default))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -248,10 +267,65 @@ foo = select(some_boolean("VALUE",), {
         (ERROR))
       (select_cases
         (select_case
-          (boolean_literal)
+          (select_pattern
+            (boolean_literal))
           (interpreted_string_literal))
         (select_case
-          (boolean_literal)
+          (select_pattern
+            (boolean_literal))
+          (interpreted_string_literal))))))
+
+================================================================================
+Select (trailing comma in values)
+================================================================================
+
+foo = select((
+    arch(),
+    os(),
+), {
+    (default, default): "true",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (identifier)
+        (identifier))
+      (select_cases
+        (select_case
+          (select_pattern
+            (default)
+            (default))
+          (interpreted_string_literal))))))
+
+================================================================================
+Select (trailing comma in pattern)
+================================================================================
+
+foo = select((arch(), os()), {
+    (default, default,): "true",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (identifier)
+        (identifier))
+      (select_cases
+        (select_case
+          (select_pattern
+            (default)
+            (default))
           (interpreted_string_literal))))))
 
 ================================================================================
@@ -275,10 +349,12 @@ foo = select(some_boolean("IS_TRUE"), {
         (interpreted_string_literal))
       (select_cases
         (select_case
-          (boolean_literal)
+          (select_pattern
+            (boolean_literal))
           (interpreted_string_literal))
         (select_case
-          (boolean_literal)
+          (select_pattern
+            (boolean_literal))
           (interpreted_string_literal))))))
 
 ================================================================================

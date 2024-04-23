@@ -131,7 +131,12 @@ module.exports = grammar({
       ")",
     ),
 
-    select_value: ($) => seq(
+    select_value: ($) => choice(
+      $._select_value,
+      seq("(", commaSeparatedOptTrailing($._select_value), ")"),
+    ),
+
+    _select_value: ($) => seq(
       field("name", $.identifier),
       "(",
       field("arguments", optional(commaSeparatedNoTrailing($._string_literal))),
@@ -145,13 +150,20 @@ module.exports = grammar({
     ),
 
     select_case: ($) => seq(
-      field("pattern", choice(
-        $._string_literal,
-        $.boolean_literal,
-        alias("default", $.default),
-      )),
+      field("pattern", $.select_pattern),
       ":",
       field("value", $._case_value)
+    ),
+
+    select_pattern: ($) => choice(
+      $._select_pattern,
+      seq("(", commaSeparatedOptTrailing($._select_pattern), ")"),
+    ),
+
+    _select_pattern: ($) => choice(
+      $._string_literal,
+      $.boolean_literal,
+      alias("default", $.default),
     ),
 
     _case_value: ($) => choice(
