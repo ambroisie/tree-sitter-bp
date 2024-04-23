@@ -41,7 +41,7 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
     (identifier)
     (operator)
     (select_expression
-      (soong_config_variable
+      (select_value
         (selection_type)
         (interpreted_string_literal)
         (interpreted_string_literal))
@@ -162,8 +162,7 @@ foo = select(variant(), {
     (operator)
     (select_expression
       (select_value
-        (selection_type)
-        (MISSING raw_string_literal))
+        (selection_type))
       (select_cases
         (select_case
           (interpreted_string_literal)
@@ -187,14 +186,17 @@ foo = select(some_unknown_type("CONDITION"), {
   (assignment
     (identifier)
     (operator)
-    (ERROR
-      (identifier)
-      (identifier)
-      (interpreted_string_literal)
-      (interpreted_string_literal)
-      (default))
-    (interpreted_string_literal))
-  (ERROR))
+    (select_expression
+      (select_value
+        (selection_type)
+        (interpreted_string_literal))
+      (select_cases
+        (select_case
+          (interpreted_string_literal)
+          (interpreted_string_literal))
+        (select_case
+          (default)
+          (interpreted_string_literal))))))
 
 ================================================================================
 Select (multiple type arguments)
@@ -214,8 +216,7 @@ foo = select(release_variable("ONE", "TWO"), {
     (select_expression
       (select_value
         (selection_type)
-        (ERROR
-          (interpreted_string_literal))
+        (interpreted_string_literal)
         (interpreted_string_literal))
       (select_cases
         (select_case

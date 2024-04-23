@@ -121,33 +121,16 @@ module.exports = grammar({
     select_expression: ($) => seq(
       "select",
       "(",
-      choice($.select_value, $.soong_config_variable),
+      $.select_value,
       ",",
       $.select_cases,
       ")",
     ),
 
     select_value: ($) => seq(
-      field("type", alias(
-        choice("product_variable", "release_variable", "variant"),
-        $.selection_type,
-      )),
+      field("type", alias($.identifier, $.selection_type)),
       "(",
-      field("condition", $._string_literal),
-      ")",
-    ),
-
-    soong_config_variable: ($) => seq(
-      field("type", alias("soong_config_variable", $.selection_type)),
-      "(",
-      field(
-        "condition",
-        seq(
-          field("namespace", $._string_literal),
-          ",",
-          field("variable", $._string_literal),
-        ),
-      ),
+      field("condition", optional(commaSeparated($._string_literal))),
       ")",
     ),
 
