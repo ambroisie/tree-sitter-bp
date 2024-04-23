@@ -227,6 +227,34 @@ foo = select(release_variable("ONE", "TWO"), {
           (interpreted_string_literal))))))
 
 ================================================================================
+Select (trailing comma in arguments)
+================================================================================
+
+foo = select(some_boolean("VALUE",), {
+    true: "true",
+    false: "false",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (identifier)
+        (interpreted_string_literal)
+        (ERROR))
+      (select_cases
+        (select_case
+          (boolean_literal)
+          (interpreted_string_literal))
+        (select_case
+          (boolean_literal)
+          (interpreted_string_literal))))))
+
+================================================================================
 Select (boolean typed)
 ================================================================================
 

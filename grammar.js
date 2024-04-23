@@ -2,6 +2,10 @@ function commaSeparated(elem) {
   return seq(elem, repeat(seq(",", elem)), optional(","))
 }
 
+function commaSeparatedNoTrailing(elem) {
+  return seq(elem, repeat(seq(",", elem)))
+}
+
 function trailingCommaSeparated(elem) {
   return repeat(seq(elem, ","))
 }
@@ -130,7 +134,7 @@ module.exports = grammar({
     select_value: ($) => seq(
       field("name", $.identifier),
       "(",
-      field("arguments", optional(commaSeparated($._string_literal))),
+      field("arguments", optional(commaSeparatedNoTrailing($._string_literal))),
       ")",
     ),
 
