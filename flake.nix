@@ -78,8 +78,9 @@
           ${pkgs.jq}/bin/jq ".version = \"''${NEW_VERSION}\"" package.json > package.json.tmp
           mv package.json.tmp package.json
           ${pkgs.gnused}/bin/sed -i -e "s/version = \"[0-9.]\\+\"/version = \"''${NEW_VERSION}\"/" Cargo.toml
+          ${pkgs.gnused}/bin/sed -i -e "s/version = \"[0-9.]\\+\"/version = \"''${NEW_VERSION}\"/" pyproject.toml
 
-          git add Cargo.toml package.json
+          git add Cargo.toml package.json pyproject.toml
           echo "Release ''${NEW_VERSION}" | git commit -eF -
           git tag -a "v''${NEW_VERSION}" -m "Release ''${NEW_VERSION}"
         '';
