@@ -61,6 +61,10 @@
             export NVIM_TREESITTER_TEXTOBJECTS='${pkgs.vimPlugins.nvim-treesitter-textobjects}'
             export NVIM_TREESITTER_PARSER='${pkgs.vimPlugins.nvim-treesitter.grammarToPlugin self.packages.${system}.tree-sitter-bp}'
 
+            # FIXME: not sure why, but I get different behaviour when left untouched
+            XDG_CONFIG_HOME=$(mktemp -d)
+            export XDG_CONFIG_HOME
+
             nvim --headless --noplugin -u ${scripts/minimal_init.lua} \
                 -c "PlenaryBustedDirectory test/ { minimal_init = '${./scripts/minimal_init.lua}' }"
           '';
