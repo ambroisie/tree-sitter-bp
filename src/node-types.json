@@ -484,6 +484,10 @@
       "required": true,
       "types": [
         {
+          "type": "any",
+          "named": true
+        },
+        {
           "type": "boolean_literal",
           "named": true
         },
@@ -583,6 +587,10 @@
   {
     "type": "]",
     "named": false
+  },
+  {
+    "type": "any",
+    "named": true
   },
   {
     "type": "default",

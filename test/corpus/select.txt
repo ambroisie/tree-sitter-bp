@@ -4,6 +4,7 @@ Select
 
 foo = select(release_variable("RELEASE_TEST"), {
     "d": "d2",
+    any: unset,
     default: unset,
 })
 
@@ -23,6 +24,10 @@ foo = select(release_variable("RELEASE_TEST"), {
           (select_pattern
             (interpreted_string_literal))
           (interpreted_string_literal))
+        (select_case
+          (select_pattern
+            (any))
+          (unset))
         (select_case
           (select_pattern
             (default))

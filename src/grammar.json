@@ -739,6 +739,15 @@
           "type": "ALIAS",
           "content": {
             "type": "STRING",
+            "value": "any"
+          },
+          "named": true,
+          "value": "any"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
             "value": "default"
           },
           "named": true,
