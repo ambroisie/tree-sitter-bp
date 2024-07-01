@@ -2,6 +2,8 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
     //       ^ function.builtin
     "foo": unset,
     //     ^ variable.builtin
+    any: unset,
+    // <- variable.builtin
     default: select(variant("VARIANT"), {}),
     // <- variable.builtin
     //              ^ function.builtin

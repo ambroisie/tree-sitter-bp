@@ -50,6 +50,7 @@
 [
  (unset)
  (default)
+ (any)
 ] @variable.builtin
 (condition
  name: (identifier) @function.builtin)
