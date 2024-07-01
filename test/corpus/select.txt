@@ -40,6 +40,7 @@ Select (soong config variable)
 foo = select(soong_config_variable("my_namespace", "my_var"), {
     "foo": unset,
     "default": "bar",
+    any @ foo: unset,
 })
 
 --------------------------------------------------------------------------------
@@ -62,7 +63,14 @@ foo = select(soong_config_variable("my_namespace", "my_var"), {
         (select_case
           (select_pattern
             (interpreted_string_literal))
-          (interpreted_string_literal))))))
+          (interpreted_string_literal))
+        (select_case
+          (select_pattern
+            (pattern_binding
+              (any)
+              (operator)
+              (identifier)))
+          (unset))))))
 
 ================================================================================
 Select (no default)

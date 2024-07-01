@@ -164,7 +164,14 @@ module.exports = grammar({
       $._string_literal,
       $.boolean_literal,
       alias("any", $.any),
+      $.pattern_binding,
       alias("default", $.default),
+    ),
+
+    pattern_binding: ($) => seq(
+      field("value", alias("any", $.any)),
+      field("operator", alias("@", $.operator)),
+      field("binding", $.identifier),
     ),
 
     _case_value: ($) => choice(

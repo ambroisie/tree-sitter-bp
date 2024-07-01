@@ -745,6 +745,10 @@
           "value": "any"
         },
         {
+          "type": "SYMBOL",
+          "name": "pattern_binding"
+        },
+        {
           "type": "ALIAS",
           "content": {
             "type": "STRING",
@@ -752,6 +756,45 @@
           },
           "named": true,
           "value": "default"
+        }
+      ]
+    },
+    "pattern_binding": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "value",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "STRING",
+              "value": "any"
+            },
+            "named": true,
+            "value": "any"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "operator",
+          "content": {
+            "type": "ALIAS",
+            "content": {
+              "type": "STRING",
+              "value": "@"
+            },
+            "named": true,
+            "value": "operator"
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "binding",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
         }
       ]
     },

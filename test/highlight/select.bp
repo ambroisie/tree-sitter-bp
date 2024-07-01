@@ -1,6 +1,9 @@
 foo = select(soong_config_variable("my_namespace", "my_var"), {
     // ^ keyword.conditional
     "foo": unset,
+    any @ foo: unset,
+    //  ^ operator
+    //    ^ variable
     default: "bar",
 })
 

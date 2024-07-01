@@ -322,6 +322,42 @@
     }
   },
   {
+    "type": "pattern_binding",
+    "named": true,
+    "fields": {
+      "binding": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "operator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "operator",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "any",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "property",
     "named": true,
     "fields": {
@@ -497,6 +533,10 @@
         },
         {
           "type": "interpreted_string_literal",
+          "named": true
+        },
+        {
+          "type": "pattern_binding",
           "named": true
         },
         {
