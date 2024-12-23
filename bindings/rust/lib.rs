@@ -6,7 +6,7 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_bp::language()).expect("Error loading txtpb grammar");
+//! parser.set_language(tree_sitter_bp::language()).expect("Error loading bp grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
