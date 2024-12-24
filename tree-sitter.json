@@ -1,0 +1,30 @@
+{
+  "grammars": [
+    {
+      "name": "bp",
+      "camelcase": "Bp",
+      "scope": "source.bp",
+      "path": ".",
+      "file-types": [
+        "bp"
+      ],
+      "injection-regex": "^bp$"
+    }
+  ],
+  "metadata": {
+    "version": "0.5.0",
+    "license": "MIT",
+    "description": "Blueprint grammar for tree-sitter",
+    "links": {
+      "repository": "https://github.com/tree-sitter/tree-sitter-bp"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true
+  }
+}
