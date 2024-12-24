@@ -145,7 +145,7 @@ module.exports = grammar({
 
     select_cases: ($) => seq(
       "{",
-      optional(commaSeparatedTrailing($.select_case)),
+      optional(commaSeparatedOptTrailing($.select_case)),
       "}",
     ),
 

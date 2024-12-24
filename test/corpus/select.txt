@@ -34,6 +34,31 @@ foo = select(release_variable("RELEASE_TEST"), {
           (unset))))))
 
 ================================================================================
+Select (no trailing comma)
+================================================================================
+
+foo = select(release_variable("RELEASE_TEST"), {
+    default: unset
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
+      (select_cases
+        (select_case
+          (select_pattern
+            (default))
+          (unset))))))
+
+================================================================================
 Select (soong config variable)
 ================================================================================
 
