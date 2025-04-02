@@ -758,6 +758,10 @@
           "name": "boolean_literal"
         },
         {
+          "type": "SYMBOL",
+          "name": "integer_literal"
+        },
+        {
           "type": "ALIAS",
           "content": {
             "type": "STRING",

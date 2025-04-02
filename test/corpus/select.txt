@@ -410,6 +410,46 @@ foo = select(some_boolean("IS_TRUE"), {
           (interpreted_string_literal))))))
 
 ================================================================================
+Select (integer typed)
+================================================================================
+
+foo = select(some_integer("VALUE"), {
+    0: "0",
+    -1: "-1",
+    1: "1",
+    default: "default",
+})
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (select_expression
+      (select_value
+        (condition
+          (identifier)
+          (interpreted_string_literal)))
+      (select_cases
+        (select_case
+          (select_pattern
+            (integer_literal))
+          (interpreted_string_literal))
+        (select_case
+          (select_pattern
+            (integer_literal))
+          (interpreted_string_literal))
+        (select_case
+          (select_pattern
+            (integer_literal))
+          (interpreted_string_literal))
+        (select_case
+          (select_pattern
+            (default))
+          (interpreted_string_literal))))))
+
+================================================================================
 Select as an identifier
 ================================================================================
 

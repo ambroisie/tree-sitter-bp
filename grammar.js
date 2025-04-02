@@ -163,6 +163,7 @@ module.exports = grammar({
     _select_pattern: ($) => choice(
       $._string_literal,
       $.boolean_literal,
+      $.integer_literal,
       alias("any", $.any),
       $.pattern_binding,
       alias("default", $.default),
