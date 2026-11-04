@@ -26,12 +26,12 @@ module.exports = grammar({
       $.module,
     ),
 
-    comment: (_) => choice(
+    comment: (_) => token(choice(
       // Unlike C, Blueprint has no line continuation: a line comment ends at the
       // newline even after a backslash, as in Go's scanner.
       seq("//", /[^\n]*/),
       seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
-    ),
+    )),
 
     // Definitions {{{
 
@@ -106,8 +106,10 @@ module.exports = grammar({
     interpreted_string_literal: $ => seq(
       '"',
       repeat(choice(
-        // Allow all characters without special meaning, disallow newlines
-        /[^"\n\\]+/,
+        // Allow all characters without special meaning, disallow newlines.
+        // Immediate and with a higher precedence than a comment, so that `//`
+        // inside a string does not start one.
+        token.immediate(prec(1, /[^"\n\\]+/)),
         $.escape_sequence,
       )),
       token.immediate('"'),
