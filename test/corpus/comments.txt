@@ -68,6 +68,32 @@ foo = ["http://example.com/a", "/* b */"] // c
   (comment))
 
 ================================================================================
+Comment markers after an escape in a string
+================================================================================
+
+a = "\n//"
+b = "\t/*"
+c = "*/"
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (assignment
+    (identifier)
+    (operator)
+    (interpreted_string_literal
+      (escape_sequence)))
+  (assignment
+    (identifier)
+    (operator)
+    (interpreted_string_literal
+      (escape_sequence)))
+  (assignment
+    (identifier)
+    (operator)
+    (interpreted_string_literal)))
+
+================================================================================
 Empty block comment
 ================================================================================
 
