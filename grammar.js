@@ -99,7 +99,7 @@ module.exports = grammar({
 
     raw_string_literal: (_) => token(seq(
       "`",
-      /[^`]+/,
+      /[^`]*/,
       "`",
     )),
 
