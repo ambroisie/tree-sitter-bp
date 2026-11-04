@@ -151,3 +151,19 @@ Comment end-delimiter only
 (source_file
   (ERROR
     (UNEXPECTED '*')))
+
+================================================================================
+Comment ending with a backslash
+================================================================================
+
+// See C:\path\
+foo = 1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (comment)
+  (assignment
+    (identifier)
+    (operator)
+    (integer_literal)))

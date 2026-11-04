@@ -27,7 +27,9 @@ module.exports = grammar({
     ),
 
     comment: (_) => choice(
-      seq("//", /(\\+(.|\r?\n)|[^\\\n])*/),
+      // Unlike C, Blueprint has no line continuation: a line comment ends at the
+      // newline even after a backslash, as in Go's scanner.
+      seq("//", /[^\n]*/),
       seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"),
     ),
 
